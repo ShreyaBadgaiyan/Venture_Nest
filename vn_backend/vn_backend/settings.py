@@ -37,7 +37,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #restful app
+    'rest_framework',
+    #auth apps
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    #register
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    #local app
+    'user_app',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -47,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #added
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'vn_backend.urls'
@@ -121,3 +139,22 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL="user_app.User"
+
+ACCOUNT_AUTHENTICATION_METHOD='email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_UNIQUE_EMAIL=True
+ACCOUNT_USERNAME_REQUIRED=False
+ACCOUNT_USER_MODEL_USERNAME_FIELD='email'
+USERNAME_REQUIRED=False
+ACCOUNT_EMAIL_VERIFICATION='mandatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET=False
+
+REST_AUTH_SERIALIZERS={
+    "LOGIN_SERIALIZER":"user_app.serializers.NewLoginSerializer",
+}
+
+REST_AUTH_REGISTER_SERIALIZERS={
+    "REGISTER_SERIALIZER":"user_app.serializers.NewRegisterSerializer",
+}

@@ -1,0 +1,4 @@
+django_resized
+django-rest-framework
+dj-rest-auth
+django-allauth
