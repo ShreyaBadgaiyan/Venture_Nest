@@ -149,12 +149,21 @@ ACCOUNT_USERNAME_REQUIRED=False
 ACCOUNT_USER_MODEL_USERNAME_FIELD='email'
 USERNAME_REQUIRED=False
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
+# ACCOUNT_EMAIL_VERIFICATION=None
+
 ACCOUNT_CONFIRM_EMAIL_ON_GET=False
 
-REST_AUTH_SERIALIZERS={
-    "LOGIN_SERIALIZER":"user_app.serializers.NewLoginSerializer",
-}
+# REST_AUTH_SERIALIZERS={
+#     "LOGIN_SERIALIZER":"user_app.serializers.NewLoginSerializer",
+# }
 
-REST_AUTH_REGISTER_SERIALIZERS={
-    "REGISTER_SERIALIZER":"user_app.serializers.NewRegisterSerializer",
+# REST_AUTH_REGISTER_SERIALIZERS={
+#     "REGISTER_SERIALIZER":"user_app.serializers.NewRegisterSerializer",
+# }
+
+REST_AUTH={
+        "LOGIN_SERIALIZER":"user_app.serializers.NewLoginSerializer",
+        "REGISTER_SERIALIZER":"user_app.serializers.NewRegisterSerializer",
+
+
 }
