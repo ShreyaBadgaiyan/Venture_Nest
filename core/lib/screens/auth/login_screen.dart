@@ -1,5 +1,6 @@
 import 'package:core/screens/auth/clipper.dart';
 import 'package:core/screens/auth/sign_up_as.dart';
+import 'package:core/screens/auth/sign_up_entrepreneur.dart';
 import 'package:core/screens/auth/sign_up_investor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -196,8 +197,10 @@ class LoginScreen extends StatelessWidget {
                     ),
                     InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => SignUpAS()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => SignUpEntrepreneurScreen()));
                         },
                         child: const Text(
                           "Sign Up",
