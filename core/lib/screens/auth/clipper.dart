@@ -5,7 +5,7 @@ class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint0 = Paint()
-      ..color = const Color(0xfff7b858)
+      ..color = ui.Color.fromARGB(255, 32, 172, 130)
       ..style = PaintingStyle.fill
       ..strokeWidth = 1;
 
@@ -49,7 +49,7 @@ class PSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint0 = Paint()
-      ..color = ui.Color.fromARGB(255, 214, 161, 81)
+      ..color = const Color(0xFF0AD98D)
       ..style = PaintingStyle.fill
       ..strokeWidth = 1;
 
